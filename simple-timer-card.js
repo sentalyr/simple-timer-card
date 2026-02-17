@@ -2683,11 +2683,11 @@ if (!audioEnabled || !audioFileUrl || !this._validateAudioUrl(audioFileUrl)) ret
           <li class="${finishedClasses}" style="--tcolor:${color}">
             <div class="vcol">
               <div class="vcircle-wrap">
-                <svg class="vcircle" width="64" height="64" viewBox="0 0 64" aria-hidden="true">
+                <svg class="vcircle" width="256" height="256" viewBox="0 0 256" aria-hidden="true">
                   <circle class="vc-track ${this._config.progress_mode === "drain" ? "vc-track-drain" : ""}" style="stroke: var(--tcolor, var(--primary-color)); stroke-opacity: 0.22;"
-                          cx="32" cy="32" r="${circleValues.radius}"></circle>
+                          cx="128" cy="128" r="${circleValues.radius}"></circle>
                   <circle class="vc-prog ${this._config.progress_mode === "drain" ? "vc-prog-drain done" : "done"}"
-                          cx="32" cy="32" r="${circleValues.radius}"
+                          cx="128" cy="128" r="${circleValues.radius}"
                     stroke-dasharray="${circleValues.circumference} ${circleValues.circumference}"
                     style="stroke: var(--tcolor, var(--primary-color)); stroke-dashoffset: ${this._config.progress_mode === "drain" ? circleValues.circumference : "0"};
                             transition: stroke-dashoffset 0.25s;"></circle>
@@ -2780,11 +2780,11 @@ if (!audioEnabled || !audioFileUrl || !this._validateAudioUrl(audioFileUrl)) ret
                    if (isIdle && supportsManualControls) this._handleStart(t);
                    else if (supportsPause && supportsManualControls) this._togglePause(t, e);
                  }}>
-              <svg class="vcircle" width="64" height="64" viewBox="0 0 64" aria-hidden="true">
+              <svg class="vcircle" width="256" height="256" viewBox="0 0 256" aria-hidden="true">
                 <circle class="vc-track ${this._config.progress_mode === "drain" ? "vc-track-drain" : ""}" style="stroke: var(--tcolor, var(--primary-color)); stroke-opacity: 0.22;"
-                        cx="32" cy="32" r="${circleValues.radius}"></circle>
+                        cx="128" cy="128" r="${circleValues.radius}"></circle>
                 <circle class="vc-prog ${this._config.progress_mode === "drain" ? "vc-prog-drain" : ""}"
-                        cx="32" cy="32" r="${circleValues.radius}"
+                        cx="128" cy="128" r="${circleValues.radius}"
                   stroke-dasharray="${circleValues.circumference} ${circleValues.circumference}"
                   style="stroke: var(--tcolor, var(--primary-color)); stroke-dashoffset: ${circleValues.strokeDashoffset}; transition: stroke-dashoffset 0.25s;"></circle>
               </svg>
@@ -2867,7 +2867,7 @@ if (!audioEnabled || !audioFileUrl || !this._validateAudioUrl(audioFileUrl)) ret
     let circleValues;
     if (isCircleStyle) {
       const progressMode = this._config.progress_mode === "drain" ? "drain" : "fill";
-      circleValues = this._calculateCircleValues(28, pct, progressMode);
+      circleValues = this._calculateCircleValues(112, pct, progressMode);
     }
     return {
       isPaused, isIdle, isFinished, color, icon, ring, pct, pctLeft,
@@ -2954,11 +2954,11 @@ if (!audioEnabled || !audioFileUrl || !this._validateAudioUrl(audioFileUrl)) ret
                    if (isIdle && supportsManualControls) this._handleStart(t);
                    else if (supportsPause && supportsManualControls) this._togglePause(t, e);
                  }}>
-              <svg class="vcircle" width="64" height="64" viewBox="0 0 64" aria-hidden="true">
+              <svg class="vcircle" width="256" height="256" viewBox="0 0 256" aria-hidden="true">
                 <circle class="vc-track ${this._config.progress_mode === "drain" ? "vc-track-drain" : ""}"
-                        cx="32" cy="32" r="${circleValues.radius}"></circle>
+                        cx="128" cy="128" r="${circleValues.radius}"></circle>
                 <circle class="vc-prog ${this._config.progress_mode === "drain" ? "vc-prog-drain" : ""}"
-                        cx="32" cy="32" r="${circleValues.radius}"
+                        cx="128" cy="128" r="${circleValues.radius}"
                   stroke-dasharray="${circleValues.circumference} ${circleValues.circumference}"
                   style="stroke-dashoffset: ${circleValues.strokeDashoffset}; transition: stroke-dashoffset 0.25s;"></circle>
               </svg>
@@ -3391,9 +3391,9 @@ const layout = this._config.layout;
       .vprogressbar { width: 100%; display: flex; align-items: center; justify-content: center; gap: 0px; margin-top: -4px; margin-bottom: -4px; }
       .vprogressbar .milestone-track { flex: 0 0 60%; }
       .vactions { display: flex; gap: 6px; align-items: center; justify-content: center; margin-top: -4px; margin-bottom: -4px; }
-      .vcircle-wrap { position: relative; width: 64px; height: 64px; display: grid; place-items: center; }
+      .vcircle-wrap { position: relative; width: 256px; height: 256px; display: grid; place-items: center; }
       .vcircle { position: absolute; inset: 0; transform: rotate(-90deg); z-index: 0; }
-      .vc-track, .vc-prog { fill: none; stroke-width: 4.5px; vector-effect: non-scaling-stroke; }
+      .vc-track, .vc-prog { fill: none; stroke-width: 15px; vector-effect: non-scaling-stroke; }
       .vc-track { stroke: var(--tcolor, var(--primary-color)); stroke-opacity: 0.22; }
       .vc-prog { stroke: var(--tcolor, var(--primary-color)); transition: stroke-dashoffset 1s linear; }
       .vc-prog.done { stroke-dashoffset: 0 !important; }
